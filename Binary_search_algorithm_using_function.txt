@@ -1,0 +1,33 @@
+# include <stdio.h>
+
+int binarysearch(int arr[],int n, int data);
+
+int main(){
+    int a[5]={2,3,44,56,78};
+    binarysearch(a,5,78);
+    return 0;
+}
+
+
+int binarysearch(int arr[],int n, int data){
+    int left=0;
+    int right=n-1;
+    int mid;
+    while(left<=right){
+        mid=(left+right)/2;
+        
+        if(data==arr[mid]){
+            printf("%d\n",mid);
+            break;
+        }
+        else if(data>arr[mid]){
+            left=mid+1;
+        }
+        else{
+            right=mid-1;
+        }
+    }
+    if(left>right){
+    printf("entered element not found");
+}
+}
